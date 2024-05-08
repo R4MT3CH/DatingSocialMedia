@@ -1,7 +1,8 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { authMiddleware } from "@clerk/nextjs/server";
 
-export default clerkMiddleware({
-  // publicRoutes: ["/api/webhook"]
+export default authMiddleware({
+  publicRoutes: ['/'],
+  ignoredRoutes: ['/api/webhook'],
 });
 
 export const config = {
